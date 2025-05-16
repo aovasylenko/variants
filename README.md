@@ -30,3 +30,17 @@ Steps
    Replace <wheel path> with the actual path to your .whl file.
 
 Note: Make sure you have the correct permissions and are in the project root directory when running these commands.
+
+Details
+-------
+
+Currenly it's extension of `anaconda-client` by patching `pypi` module and extending it by parsing variants.
+
+Mirror
+------
+
+it's possible to mirror from one variants to another `anaconda.org` site by using:
+
+```
+python mirror.py --index <original index> --site <site-from-anaconda-client> --projects numpy,torch
+```
