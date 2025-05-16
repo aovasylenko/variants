@@ -10,6 +10,8 @@ import zipfile
 
 
 def inspect_pypi_package_whl_variant(filename, fileobj):
+    # took it directly from: https://github.com/wheelnext/variantlib/blob/main/variantlib/commands/analyze_wheel.py#L69-L87 
+    # later we can use variantlib, once it provide API for inspecting pypi package
     package_data, release_data, file_data = pypi.inspect_pypi_package_whl(filename, fileobj)
 
     data = extract_first(zipfile.ZipFile(fileobj), '*.dist-info/METADATA')
